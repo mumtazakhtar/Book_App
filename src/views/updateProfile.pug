@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        title The Book App
+        link(rel="stylesheet", type="text/css", href="css/style.css")
+    body
+    #header
+        ul.nav
+            li
+                a(href="/")
+                    img.logo(src="images/logo.jpg")
+            li
+                a(href="/") Home
+            li
+                a(href="/search") Search books
+            li
+                a(href="/addBook") Add Book
+            li
+                a(href='/logout') Logout
+
+    .update
+
+        form.input-field(action='/api/auth/update', method='POST', autocomplete='off')
+            h2 update profile
+            input.name-update(type='text', name='username', placeholder="Enter registered UserName", autocomplete='off')
+            br
+            input.email-update(type='text', name='email', placeholder="Enter your Email")
+            br
+            input.password-update(type='password', name='Password', placeholder= "change password")
+            br
+            button.btn_update(type='submit', name="update") Change
+
+        if message
+            p.message= message
+
+

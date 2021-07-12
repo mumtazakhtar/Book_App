@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title The Book App
+    link(rel="stylesheet", type="text/css", href="css/style.css")
+  body
+  #header
+    ul.nav
+      li
+        a(href="/")
+          img.logo(src="images/logo.jpg")        
+      li
+        a(href="/") Home
+      li
+        a(href="/search") Search Books
+      li
+        a(href="/addBook") Add Book
+      li
+        a(href="/logout") Logout
+  // header
+  if message
+    p.message= message
+  .search
+    form.book(action='api/auth/searchbook', method='post', autocomplete='off')
+      h3 Search by name of the book!
+      input.book_name(type='text', name='bookName',placeholder="name of the book")
+      br
+      input.search_book(type='submit',value='Search')
+    if message1
+      h1.message= message1
+    else if result
+      a.data(href="#") This book  #{result.book.name} is available! and is written  by the following author(s)
+      ul.datalist
+        each author in result.author
+          li= author.name
+
+  .footer_search
+    p All rights reserved @ Mumtaz 
+

@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    title The Book App
+    link(rel="stylesheet", type="text/css", href="css/style2.css")
+  body
+  #header
+    ul.nav
+      li
+        a(href="index.pug")
+          img.logo(src="images/logo.jpg")        
+      li
+        a(href="/") Home
+      li
+        a(href="/search") Search books
+      li
+        a(href="/addBook") Add Books
+      li
+        a(href="/logout") Logout
+  // header
+  .banner
+    form.input-field(action='api/auth/addBook', method='POST', autocomplete='off')
+      h2 Add book
+      label(for='name') Name of the Book
+      br
+      input.entry(type='text', name='name', placeholder="name of the book")
+      br
+      input.entry(type='text', name='authorName', placeholder="name of the author")
+      br
+      input.entry(type='text', name='year', placeholder="published year")
+      br
+      textarea.entry(type='text', name= 'description', placeholder="Start writing..!")
+      br
+      button.btn_signup(type='submit', name="sign-up") Add book
+
+    p.data
+      if data
+       p.data You have successfully written #{data.book.name}..!
+
+  .footer
+    p All rights reserved @ Mumtaz 
+  

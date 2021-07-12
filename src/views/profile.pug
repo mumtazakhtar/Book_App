@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title The book App
+    link(rel="stylesheet", type="text/css", href="css/style.css")
+  body
+  #header
+    ul.nav
+      li
+        a(href="/")
+          img.logo(src="images/logo.jpg")        
+      li
+        a(href="/") Home
+      li
+        a(href="/search") Search Books
+      li
+        a(href="/addBook") Add Books
+      li
+        a(href="/updateProfile") Update profile
+      li
+        a(href="#") Logout
+
+
+    h1.message Welcome back #{name}!
